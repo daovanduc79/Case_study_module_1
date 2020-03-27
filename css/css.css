@@ -1,0 +1,66 @@
+.div-body {
+    width: 1500px;
+    height: 730px;
+    background-color: lightblue;
+}
+
+
+
+.menu {
+    color: white;
+    text-decoration: none;
+    background: black;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+}
+
+.menu{
+    animation: colorBackground 0.5s infinite;
+    -webkit-animation: colorBackground 5s infinite;
+    -moz-animation: colorBackground 5s infinite;
+    -o-animation: colorBackground 0.5s infinite
+}
+@keyframes colorBackground {
+    0% {
+        background-color: yellowgreen;
+        color: white;
+    }
+    50% {
+        background-color: red;
+        color: yellow;
+    }
+}
+
+.menu:hover {
+    background: yellow;
+    color: red;
+}
+.menu:active {
+    background: green;
+}
+
+.div1 {
+    float: left;
+    width: 1200px;
+    text-align: center;
+
+}
+.div2 {
+    float: left;
+    text-align: center;
+    width: 300px;
+    margin-top: 200px;
+
+
+}
+p {
+    color: #cc0000;
+    font-size: 120%;
+    font-weight: bold;
+    text-shadow: 0 0 3px blue;
+}
+h1 {
+    color: red;
+    text-align: center;
+}
