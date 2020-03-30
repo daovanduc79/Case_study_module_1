@@ -1,6 +1,8 @@
-let heartArray = ['../pictures/heartbaby1.png','../pictures/heartbaby2.png','../pictures/heartbaby3.png','../pictures/heartbaby4.png',
-    '../pictures/heartbaby5.png','../pictures/heartbaby6.png','../pictures/heartbaby7.png'];
+let heartArray = ['pictures/heartbaby1.png','pictures/heartbaby2.png','pictures/heartbaby3.png','pictures/heartbaby4.png',
+    'pictures/heartbaby5.png','pictures/heartbaby6.png','pictures/heartbaby7.png'];
+
 let hearts = [];
+
 class Heart {
     constructor(left, top, width, height, speed) {
         this.left = left;
@@ -14,7 +16,7 @@ class Heart {
     // Thay đổi heart ngẫu nhiên trong mảng
     setImage() {
         let temp = heartArray[Math.floor(Math.random()*heartArray.length)];
-
+        
         if (this.img === temp) {
             temp = heartArray[Math.floor(Math.random()*heartArray.length)];
         }
@@ -25,7 +27,6 @@ class Heart {
     // Hiển thị heart trên canvas
     draw() {
         let heartImage = new Image();
-        this.setImage();
         heartImage.src = this.img;
         if (this.isLive) {
             ctx.drawImage(heartImage, this.left,this.top,this.width,this.height);
@@ -44,6 +45,7 @@ function createHeart() {
     let topHeart = Math.random() * (0 - canvas.height);
     let heart = new Heart(leftHeart,topHeart, HEART_WIDTH, HEART_HEIGHT, speed);
     hearts.push(heart);
+    heart.setImage();
     heart.draw();
 }
 // Tạo một bầu trời heart

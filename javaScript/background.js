@@ -1,13 +1,13 @@
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
-let backgroundArray = ['../pictures/background1.png','../pictures/background2.png','../pictures/background3.png','../pictures/background4.png'];
 
-
+let backgroundArray = ['pictures/background1.png','pictures/background2.png','pictures/background3.png','pictures/background4.png'];
 
 class Background {
     constructor() {
         this.img = '';
     }
+
     setImage() {
         let temp = backgroundArray[Math.floor(Math.random()*backgroundArray.length)];
 

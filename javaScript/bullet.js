@@ -6,11 +6,13 @@ class Bullet  {
         this.height = height;
         this.speed = 9;
     }
+
     draw() {
         let bulletImage = new Image();
-        bulletImage.src = '../pictures/bullet3.png';
+        bulletImage.src = 'pictures/bullet3.png';
         ctx.drawImage(bulletImage,this.left,this.top,this.width,this.height);
     }
+
     move() {
         this.top -= this.speed;
     }

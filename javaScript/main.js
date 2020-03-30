@@ -21,7 +21,7 @@ function startGame() {
         archer.move();
         archer.shoot();
         gameBoard.checkCrash();
-        // createHeart();
+
         for (let i = 0; i < hearts.length; i++) {
             if (hearts[i].top > canvas.height) {
                 isGameOver = true;
