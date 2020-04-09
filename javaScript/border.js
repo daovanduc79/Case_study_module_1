@@ -45,17 +45,17 @@ class GameBoard {
     }
 
     // Sự kiện va chạm
-    crash(heart, bullet) {
+    crash(heart, arrow) {
         let leftHeart = heart.left;
         let rightHeart = heart.left + heart.width;
         let topHeart = heart.top;
         let bottomHeart = heart.top + heart.height;
-        let leftBullet = bullet.left;
-        let rightBullet = bullet.left + bullet.width;
-        let topBullet = bullet.top;
-        let bottomBullet = bullet.top + bullet.height;
+        let leftArrow = arrow.left;
+        let rightArrow = arrow.left + arrow.width;
+        let topArrow = arrow.top;
+        let bottomArrow = arrow.top + arrow.height;
 
-        if (rightHeart < leftBullet || bottomHeart < topBullet || leftHeart > rightBullet || topHeart > bottomBullet) {
+        if (rightHeart < leftArrow || bottomHeart < topArrow || leftHeart > rightArrow || topHeart > bottomArrow) {
             return false;
         } else {
             return true;
@@ -65,8 +65,8 @@ class GameBoard {
     // Kiểm tra điều kiện va chạm
     checkCrash() {
         for (let i = 0; i < hearts.length; i++) {
-            for (let j = 0; j < archer.bullets.length; j++) {
-                if (this.crash(hearts[i], archer.bullets[j])) {
+            for (let j = 0; j < archer.arrows.length; j++) {
+                if (this.crash(hearts[i], archer.arrows[j])) {
                     hearts[i].isLive = false;
                 }
             }

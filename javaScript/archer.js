@@ -11,7 +11,7 @@ class Archer {
         this.isShoot = isShoot;
         this.reloadCount = 0;
         this.reload = 9;
-        this.bullets = [];
+        this.arrows = [];
     }
 
     // Hiển thị archer trên canvas
@@ -41,21 +41,21 @@ class Archer {
             this.reloadCount++; // khoảng cách 2 lần bắn
             if (this.reloadCount >= this.reload) {
                 // tạo arrow tại vị trí archer
-                let bullet = new Bullet(this.left + this.width / 2 - BULLET_WIDTH / 2,this.top,BULLET_WIDTH,BULLET_HEIGHT);
-                this.bullets.push(bullet);
+                let arrow = new Arrow(this.left + this.width / 2 - ARROW_WIDTH / 2,this.top,ARROW_WIDTH,ARROW_HEIGHT);
+                this.arrows.push(arrow);
 
                 this.reloadCount = 0;
             }
         }
-        for (let i = 0; i < this.bullets.length; i++) {
+        for (let i = 0; i < this.arrows.length; i++) {
             // xóa arrow khi ra khỏi màn hình
-            if (this.bullets[i].top < 0 ) {
-                this.bullets.splice(i, 1);
+            if (this.arrows[i].top < 0 ) {
+                this.arrows.splice(i, 1);
                 i--;
             }
             else {
-                this.bullets[i].move();
-                this.bullets[i].draw();
+                this.arrows[i].move();
+                this.arrows[i].draw();
             }
         }
     }

@@ -1,5 +1,5 @@
-let heartArray = ['pictures/heartbaby1.png','pictures/heartbaby2.png','pictures/heartbaby3.png','pictures/heartbaby4.png',
-    'pictures/heartbaby5.png','pictures/heartbaby6.png','pictures/heartbaby7.png'];
+let heartArray = ['pictures/heart1.png','pictures/heart2.png','pictures/heart3.png','pictures/heart4.png',
+    'pictures/heart5.png','pictures/heart6.png','pictures/heart7.png'];
 
 let hearts = [];
 
@@ -16,7 +16,7 @@ class Heart {
     // Thay đổi heart ngẫu nhiên trong mảng
     setImage() {
         let temp = heartArray[Math.floor(Math.random()*heartArray.length)];
-        
+
         if (this.img === temp) {
             temp = heartArray[Math.floor(Math.random()*heartArray.length)];
         }
